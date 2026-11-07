@@ -141,3 +141,10 @@ Undo: `npm uninstall -g bailian-cli` and remove the installed skills (Claude not
 - [Public project repository](https://github.com/AINxtGenDev/video).
 - [Initial commit and tracked files](https://github.com/AINxtGenDev/video/commit/8c4c4e88d995a49fa0fcd81d1672142e09ff12c8).
 - Local verification: `gh repo view`, `git status`, `git remote -v`, `git config --local --get core.sshCommand`, `git ls-files`, `git ls-remote`, and `git check-ignore`.
+
+## README presentation update — 7 November 2026
+
+- User preference: the README should be colorful and include icons and emojis.
+- Updated [readme.md](readme.md) with amber, purple, teal, and blue Shields.io badges, an emoji title and section headings, and a workflow table with visual stage markers.
+- Preserved the project status, SSH instructions, credential guidance, and references. Clarified that this log includes subsequent project updates as well as the original research.
+- Badges use externally hosted images from `img.shields.io`; descriptive alternative text and adjacent text links keep the information available without the images.
