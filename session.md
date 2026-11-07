@@ -148,3 +148,13 @@ Undo: `npm uninstall -g bailian-cli` and remove the installed skills (Claude not
 - Updated [readme.md](readme.md) with amber, purple, teal, and blue Shields.io badges, an emoji title and section headings, and a workflow table with visual stage markers.
 - Preserved the project status, SSH instructions, credential guidance, and references. Clarified that this log includes subsequent project updates as well as the original research.
 - Badges use externally hosted images from `img.shields.io`; descriptive alternative text and adjacent text links keep the information available without the images.
+
+## Wan 3.0 through OpenRouter — planning, 7 November 2026
+
+- Requested a plan to use `alibaba/wan-3.0` with the OpenRouter credential intended to be stored in the project's `.env`.
+- Confirmed the exact model through the public [video catalog](https://openrouter.ai/api/v1/videos/models). Use the dedicated asynchronous video API, with submit, poll, and download operations.
+- Prepared [wan-openrouter-plan.md](wan-openrouter-plan.md) and supporting [primary-source research](wan-openrouter-research.md); linked both from the README.
+- Local checks: Python 3.12.3 and `ffprobe` are available; `.env` has permissions `0600` and remains ignored. No `OPENROUTER_API_KEY` assignment was found. Requested only the variable name or local addition of that assignment; no credential value was displayed or transmitted.
+- Proposed first generation: five seconds, 480p, 16:9, audio disabled, generic interior prompt. Base generation estimate USD 0.25; USD 0.2125 with the currently advertised 15% discount. These are estimates, not a billing guarantee. [Model pricing](https://openrouter.ai/alibaba/wan-3.0).
+- The current model page reports no EU in-region route, and OpenRouter excludes video generation from ZDR eligibility. Use a generic prompt initially and verify data handling before uploading client assets. [Video retention documentation](https://openrouter.ai/docs/guides/overview/multimodal/video-generation#zero-data-retention).
+- No authentication test, dependency installation, paid generation, or account configuration change was performed. Next: make the OpenRouter credential available, implement and verify the proposed client, then agree on the exact first paid request and budget.

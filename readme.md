@@ -57,6 +57,8 @@ The key path is specific to that machine. Other contributors should use their ow
 
 ## 📚 References
 
+- [🎬 Wan 3.0 through OpenRouter — implementation plan](wan-openrouter-plan.md).
+- [🔎 Wan and OpenRouter — verified API research](wan-openrouter-research.md).
 - [Project research and proposed next steps](session.md).
 - [GitHub: connecting with SSH](https://docs.github.com/en/authentication/connecting-to-github-with-ssh).
 - [GitHub: ignoring files](https://docs.github.com/en/get-started/git-basics/ignoring-files).
