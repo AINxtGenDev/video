@@ -107,3 +107,37 @@ Undo: `npm uninstall -g bailian-cli` and remove the installed skills (Claude not
 5. The user reviews it: does it fit the calm, airy brand? Any warped furniture, flicker, or unwanted text?
 6. Decide what's next. Good: plan the remaining clips at 480p, then render the keepers at 720p. Not good: one more attempt with a better prompt, or switch to the Higgsfield fallback.
 7. Claude adds the result and the actual cost to `session.md`.
+
+---
+
+# Session 2026-11-07: Public repository setup
+
+## Completed
+
+1. Initialized `/home/nuc8/05_development/44_video` as a Git repository with default branch `main`.
+2. Created the public GitHub repository [AINxtGenDev/video](https://github.com/AINxtGenDev/video).
+3. Configured `origin` as `git@github.com:AINxtGenDev/video.git` and set `main` to track `origin/main`.
+4. Configured this repository's SSH command to use `/home/nuc8/.ssh/github_werner`, with `IdentitiesOnly=yes` and `StrictHostKeyChecking=yes`. Confirmed that the key authenticates as `AINxtGenDev`. Repository creation used the existing GitHub CLI login; Git pushes used the specified SSH identity.
+5. Created [readme.md](readme.md) with the project purpose, status, proposed workflow, SSH setup, credential handling, and references.
+6. Created [.gitignore](.gitignore) to exclude local `.env` files, private-key file patterns, `.claude/`, dependencies, caches, logs, and generated assets in `outputs/` and `renders/`.
+7. Committed and pushed the initial three files (`readme.md`, `.gitignore`, and `session.md`) in commit [`8c4c4e8`](https://github.com/AINxtGenDev/video/commit/8c4c4e88d995a49fa0fcd81d1672142e09ff12c8), titled `Initialize video project with README and research notes`.
+
+## Verification
+
+- GitHub reported public visibility and default branch `main`.
+- The local commit and remote `main` matched after the initial push; the working tree was clean.
+- `git check-ignore` confirmed that `.env` and `.claude/` were ignored. Only the three intended project files were tracked.
+- The staged changes passed `git diff --cached --check`.
+
+## Current status and next steps
+
+- The project remains in the planning stage. No provider integration was installed and no video-generation job was submitted during this session.
+- The 4 November research above remains historical and unverified. Recheck current primary sources before relying on model names, availability, prices, technical capabilities, or legal conclusions.
+- Provider activation, credential setup, CLI review, and the first approved test clip remain pending as described above.
+- User workflow preference: keep `session.md` updated with completed work, decisions, verification, and outstanding items; commit and push completed updates automatically. Review the staged content for secrets before publishing to this public repository.
+
+## Sources
+
+- [Public project repository](https://github.com/AINxtGenDev/video).
+- [Initial commit and tracked files](https://github.com/AINxtGenDev/video/commit/8c4c4e88d995a49fa0fcd81d1672142e09ff12c8).
+- Local verification: `gh repo view`, `git status`, `git remote -v`, `git config --local --get core.sshCommand`, `git ls-files`, `git ls-remote`, and `git check-ignore`.
