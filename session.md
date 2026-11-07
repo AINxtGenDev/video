@@ -257,3 +257,11 @@ The user reaffirmed that session information should be updated, committed, and p
 - Stopped the temporary HyperFrames preview server after verification. The earlier localhost preview URL is no longer active; restart it from `introduction-video/` with `npx --yes hyperframes@0.9.20 preview --background --port 4317` when needed.
 - Submitted an anonymized renderer-defect report through the HyperFrames CLI workflow, documenting the missing Wan portrait interval and the successful local composition workaround. No project source, images, absolute paths, or credentials were included in the report.
 - Current objective is complete: both requested introductions are saved locally with Claudia's actual photograph and soft music. Selection for publication, revisions, and website deployment await further user instruction. No additional generation is running.
+
+## Repository contributor guide — 7 November 2026
+
+- User requested a concise root `AGENTS.md`, titled “Repository Guidelines”, with instructions to preserve any existing root file. Checked the working directory first and confirmed that no root `AGENTS.md` existed.
+- Created [AGENTS.md](AGENTS.md) covering project structure, actual development/rendering commands, formatting conventions, export verification, commit/PR expectations, and credential/media handling. Referenced the existing nested guide and rendering/review documentation instead of duplicating their detailed workflow.
+- Preserved `introduction-video/AGENTS.md` unchanged. The repository has no automated unit-test suite or coverage target; the guide accurately documents HyperFrames checks and final-file verification.
+- Checked the guide's length, local document references, staged whitespace, and the nested guide's unchanged status. No video source or delivered media was modified; this was a documentation-only task.
+- User reaffirmed the instruction to update session information, commit, and push when finished. The two delivered introduction videos remain available at the previously recorded local paths.
