@@ -19,6 +19,7 @@ __pycache__/
 # Generated media and logs
 outputs/
 renders/
+/plessl-wan-5s-480p-silent.mp4
 *.log
 
 # Operating system metadata

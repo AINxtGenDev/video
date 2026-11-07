@@ -2,6 +2,8 @@
 
 Prepared: **7 November 2026**. Scope: implementation planning and public, read-only research. No paid generation or account configuration changes were performed.
 
+**Execution update, 7 November 2026:** one image-to-video job has since completed, followed by local formatting and removal of its audio track. See [the session log](session.md#first-wan-clip-generated--7-november-2026) for the measured result and observed provider deviations. The statements below describe the planning baseline unless marked otherwise.
+
 ## 1. Decision and prerequisites
 
 Use the exact model **`alibaba/wan-3.0`** through OpenRouter's dedicated video API. A public request to `GET /api/v1/videos/models` confirmed this model. Its absence from the ordinary `/models` response does not establish video unavailability. See the [video catalog](https://openrouter.ai/api/v1/videos/models) and [model discovery reference](https://openrouter.ai/docs/api/api-reference/video-generation/list-all-video-generation-models).
@@ -95,4 +97,4 @@ Create a small `scripts/wan_video.py` client with `check`, `dry-run`, `submit`, 
 
 Before a paid test, use mocked HTTP responses to verify missing credentials, unsupported parameters, cost-limit rejection, ambiguous submission failure, all documented terminal states, resumability, and redirect handling without credential leakage. Then perform the single approved five-second smoke test, record its job ID and actual reported cost, and update `session.md`.
 
-**Current result:** the public integration path is verified; account authentication and generation are pending. This plan does not install dependencies or execute the proposed client.
+**Planning baseline:** the public integration path was verified before authentication and generation. The subsequent single-job execution is documented in the session log. A reusable client has not yet been implemented.

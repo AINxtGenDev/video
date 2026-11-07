@@ -178,3 +178,35 @@ Undo: `npm uninstall -g bailian-cli` and remove the installed skills (Claude not
 The OpenRouter route is the current implementation plan. The earlier direct-Alibaba account and `bailian-cli` instructions remain historical alternatives; they are not prerequisites for this route. No video client has been implemented and no generation has been submitted.
 
 The user reaffirmed that session information should be updated, committed, and pushed automatically after completed work. This is the working preference for future sessions; no background scheduler or Git hook has been installed.
+
+## First Wan clip generated — 7 November 2026
+
+### Request and reference
+
+- User authorized generating one five-second 480p clip without audio, using the style of `/home/nuc8/05_development/55_laulau/78_plessl-website`, and saving it in this project.
+- Inspected the existing `website/public/video/vorstellung.mp4` (58.2 seconds, 1080×1920), sampled its frames, and read the current frame CSS and source notes. Selected its calm portrait presentation, cream canvas, sage/blush palette, natural materials, and restrained movement.
+- Used the website's public [living-room image](https://claudiaplessl.at/_next/static/media/projects-living-610.dea2e572.webp) as the first-frame reference. Its downloaded bytes matched `website/src/assets/projects-living-610.webp`. No portrait, voice sample, or full source video was uploaded. The website project was inspected without modifications.
+
+### Authentication and generation
+
+- The earlier credential checks correctly found no named `OPENROUTER_API_KEY` assignment, but a subsequent format-only inspection found one OpenRouter-format token stored as a bare value in `.env`. Loaded that unambiguous token in memory and successfully authenticated with `GET /api/v1/key`. No credential value was displayed or committed; `.env` was not modified.
+- Rechecked the live video catalog and provider pricing, then submitted one job to `POST /api/v1/videos` using `alibaba/wan-3.0`, `duration: 5`, `resolution: "480p"`, `aspect_ratio: "9:16"`, `generate_audio: false`, first-frame reference, and `provider.only: ["alibaba"]`.
+- Prompt: preserve the reference interior and its cream/sage/blush palette, with an extremely slow push-in and slight parallax; no people, transformations, scene cuts, added text, or new logos.
+- Saved the accepted job ID before polling. The job completed; returned `usage.cost` was **USD 0.2125**, with `is_byok: false`. No second generation was submitted.
+- **Observed provider deviation:** despite the requested settings, the downloaded result was 640×640, approximately 5.038 seconds, and included an AAC audio track. Future integrations must validate the actual output and enforce delivery requirements locally rather than relying solely on request flags. This observation concerns this job; it does not establish behavior for every Wan request.
+
+### Delivered file and verification
+
+- Final file: `/home/nuc8/05_development/44_video/plessl-wan-5s-480p-silent.mp4`.
+- Locally removed audio, trimmed to 150 frames, and placed the complete square interior scene on a 480×854 cream portrait canvas with a thin sage rule, following the source film's restrained presentation. The picture panel is 432×432; this is a portrait composition of the square generation, not a native full-frame portrait generation.
+- `ffprobe` verified **5.000 seconds, 480×854, H.264, 30 fps, 150 frames, and exactly one video stream with no audio stream**. File size: **490,601 bytes**.
+- SHA-256: `50ea1959749e5427d6cdbf715802ea8e9dc2ba3fcd3c7044bb07104474699652`.
+- Full-file FFmpeg decode passed with `-xerror`. Sampled generated frames and the finished preview were visually inspected; user review of the motion and composition remains next.
+- Local evidence: `outputs/plessl-wan-5s-480p/request.json`, `job.json`, `provider-original.mp4`, `download.json`, `validation.json`, and preview images. These remain ignored. The final root-level MP4 is explicitly ignored as well.
+- Updated the README to reflect the first completed draft. No global dependencies, reusable client, Git hook, or background automation were installed.
+
+### Sources and next step
+
+- Source style: the website project's `video-source/compositions/frames/_shared.css`, `04-ordnung-gestaltung.html`, `website/src/app/globals.css`, existing MP4, and reference asset.
+- API: [video catalog](https://openrouter.ai/api/v1/videos/models), [submit reference](https://openrouter.ai/docs/api/api-reference/video-generation/submit-a-video-generation-request), and local sanitized job/validation records listed above.
+- Next: review the delivered clip before authorizing another generation or a longer/higher-resolution version. A reusable client remains optional future work; the previously missing authentication prerequisite has now been resolved for this execution.

@@ -2,7 +2,7 @@
 
 **✨ From creative brief to reviewed brand video.**
 
-[![Status: Planning](https://img.shields.io/badge/Status-Planning-F59E0B?style=for-the-badge)](#-project-status)
+[![Status: First Draft](https://img.shields.io/badge/Status-First_Draft-10B981?style=for-the-badge)](#-project-status)
 [![Focus: AI Video](https://img.shields.io/badge/Focus-AI_Video-8B5CF6?style=for-the-badge)](#-intended-workflow)
 [![Notes: Session Log](https://img.shields.io/badge/Notes-Session_Log-0D9488?style=for-the-badge)](session.md)
 [![GitHub: Public Repository](https://img.shields.io/badge/GitHub-Public_Repository-2563EB?style=for-the-badge&logo=github&logoColor=white)](https://github.com/AINxtGenDev/video)
@@ -15,7 +15,15 @@ AI-assisted video production project for short brand and process videos, initial
 
 ## 🧭 Project status
 
-This repository currently contains planning and research notes. No application, video-generation integration, or automated production pipeline has been implemented.
+The first Wan 3.0 draft was generated through OpenRouter on **7 November 2026** and finished locally to match the existing brand film: warm cream, sage green, blush, and restrained interior motion.
+
+- 🎞️ **Local file:** `plessl-wan-5s-480p-silent.mp4` in the project root.
+- 📐 **Output:** 5.000 seconds · 480×854 portrait · 30 fps · H.264.
+- 🔇 **Audio:** no audio stream.
+- 💵 **Reported generation cost:** USD 0.2125 for one job.
+- 📝 **Details:** [Generation notes and verification](session.md#first-wan-clip-generated--7-november-2026).
+
+The MP4 and job metadata are retained locally and excluded from this public repository. The repository contains planning and research documentation; a reusable client and automated production pipeline remain future work.
 
 [session.md](session.md) records the research session dated 4 November 2026 and subsequent project updates, including repository setup on 7 November 2026.
 
