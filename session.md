@@ -210,3 +210,41 @@ The user reaffirmed that session information should be updated, committed, and p
 - Source style: the website project's `video-source/compositions/frames/_shared.css`, `04-ordnung-gestaltung.html`, `website/src/app/globals.css`, existing MP4, and reference asset.
 - API: [video catalog](https://openrouter.ai/api/v1/videos/models), [submit reference](https://openrouter.ai/docs/api/api-reference/video-generation/submit-a-video-generation-request), and local sanitized job/validation records listed above.
 - Next: review the delivered clip before authorizing another generation or a longer/higher-resolution version. A reusable client remains optional future work; the previously missing authentication prerequisite has now been resolved for this execution.
+
+## Two professional introduction films — 7 November 2026
+
+### Scope and verified website sources
+
+- User requested a professional 480p introduction based on [claudiaplessl.at](https://claudiaplessl.at/), with Claudia's actual photograph and soft background music, then explicitly requested a second version using `alibaba/wan-3.0`. User also requested the final file locations.
+- Read the live homepage via HTTP 200 and captured it successfully with HyperFrames. Confirmed the current emphasis on Raumgestaltung and Ordnungscoaching, Vienna and Lower Austria, and the invitation to a free introductory conversation. No prices or new qualification claims were added to the films.
+- Downloaded and hash-checked the live portrait, logo, living-room image, and storage image against the local website files. [Asset sources and hashes](introduction-video/asset-sources.json). The website project was not modified.
+- Reused the existing Manrope and Montserrat fonts with their SIL Open Font License notices. Reused the user's existing instrumental “Casa in Ordine” from the same brand project; no voice, avatar, or new music service was generated.
+
+### Creative work and generation
+
+- Created an editable HyperFrames 0.9.20 project under `introduction-video/`, with five scenes: room/claim, Claudia, organisation, design, and contact. [Storyboard](introduction-video/STORYBOARD.md), [specification](introduction-video/SPEC.md), [rendering instructions](introduction-video/README.md).
+- Both variants include a dedicated seven-second scene using Claudia's unchanged real photograph. Her portrait and existing voice recordings were not sent to Wan. No narration was added.
+- Editorial version uses the website images with restrained camera movement, clear German titles, and original branding.
+- Submitted one new **20-second 480p** image-to-video request to `alibaba/wan-3.0`, using the public living-room image. The job completed and reported `usage.cost: 0.85` USD. Its 640×640 source included audio despite `generate_audio: false`; source audio was removed before composition. There was no second paid request for these introduction films.
+- Used 17 seconds of the new Wan shot across the three interior scenes; real portrait, logo, titles, and contact sequence were mounted locally. Final length of each film: 30 seconds.
+- Prepared a 30-second music excerpt starting at 106.3 seconds in the existing track, normalized to a −25 LUFS target, with 1.2-second fade-in and 2.5-second fade-out.
+
+### Export checks and correction
+
+- Both variants passed the HyperFrames checks with no errors or warnings after correcting the disclosure text's contrast. One informational clipping finding during the intended sideways seam remains documented.
+- Inspected scene and phone contact sheets and all four cut strips. The independent visual reviewer found no blocking P0/P1 issue on the supplied Editorial sheets. The Wan variant was also inspected separately.
+- The seam checker passed all four direction, speed, and no-overlap checks after a local runtime adapter rebound the unchanged master script following subcomposition loading. Used system Chrome without changing host security settings. [Review details](introduction-video/REVIEW.md).
+- **Final-file review found a missing portrait scene in the direct Wan render even though the preview contained it.** Corrected the delivered Wan film by inserting the verified Editorial sequence from 5–12 seconds, preserving its Wan footage and music. [Reproducible finishing script](introduction-video/finish_wan.sh). The entire 210-frame portrait segment matched at SSIM 0.998318 after the additional encode; the final portrait and contact sheets were visually rechecked.
+- Both finished files passed complete FFmpeg decoding and `ffprobe` validation: **30.000 seconds, 480×854, 30 fps, 900 video frames, H.264, one AAC stereo track at 48 kHz**.
+- Music measurements: **−25.4 LUFS integrated**, **−13 dBTP**, no clipping. Audio was measured, not auditioned.
+
+### Final local files
+
+| Version | Absolute file path | Bytes | SHA-256 |
+| --- | --- | ---: | --- |
+| Editorial | `/home/nuc8/05_development/44_video/plessl-introduction-480p.mp4` | 5,396,300 | `0b3bc2674a60b5271e6bcbdc8fdb18213d06142b5ac491aeff1a7b4af169e180` |
+| Alibaba Wan 3.0 | `/home/nuc8/05_development/44_video/plessl-introduction-wan-480p.mp4` | 3,962,179 | `efebb15af48f36327af3675438b83916d0a3923dcf4fec421f98b90a91e4adb7` |
+
+- Final validation, job records, raw exports, audio measurements, and preview images remain under ignored `outputs/plessl-introduction/`. Music and Wan media inside the editable project are explicitly ignored. All three delivered MP4 files remain local rather than being pushed to the public repository.
+- The editable project was previewed successfully at `http://127.0.0.1:4317/#project/introduction-video`. The video sources and documentation are committed as the normal automatic workflow; no website deployment was performed.
+- Next: user review of both complete films, especially pacing and music, before selecting a version for publication or requesting revisions.

@@ -1,0 +1,27 @@
+{
+  "website": "https://claudiaplessl.at/",
+  "assets": [
+    {
+      "file": "assets/claudia.webp",
+      "source": "https://claudiaplessl.at/_next/static/media/portrait-1147.9fe7e4cf.webp",
+      "sha256": "dc41fa4e560d6fda0c40fedd31a35d022afa69b8bea3e84f61c59ee8462b02fc"
+    },
+    {
+      "file": "assets/logo.webp",
+      "source": "https://claudiaplessl.at/_next/static/media/logo-960.10902c05.webp",
+      "sha256": "b4f5869c5098b42e4932f632829728c3ce5f89e0ef39e28c9e941fb207295ee2"
+    },
+    {
+      "file": "assets/living.webp",
+      "source": "https://claudiaplessl.at/_next/static/media/projects-living-610.dea2e572.webp",
+      "sha256": "1e56013ba73640b58eade6f8a35f1d3f2595becc1251959eba9ebc11c90f8366"
+    },
+    {
+      "file": "assets/order.webp",
+      "source": "https://claudiaplessl.at/_next/static/media/projects-order-610.48c831bc.webp",
+      "sha256": "9a6ae01259af6a29693120e05af64e113602bcd88b48bead069b62088a394f72"
+    }
+  ],
+  "fonts": "Brand fonts reused with bundled SIL Open Font License notices.",
+  "music": "Local user-provided Casa in Ordine, same instrumental as the existing brand film; not published to Git."
+}

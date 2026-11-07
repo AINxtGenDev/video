@@ -1,0 +1,77 @@
+{
+  "fps": 30,
+  "seams": [
+    {
+      "id": "hook-to-portrait",
+      "cut": 5,
+      "technique": "cut-the-curve LEFT",
+      "exit": {
+        "selector": "#hook-motion",
+        "axis": "x",
+        "dir": -1,
+        "dur": 0.32
+      },
+      "entry": {
+        "selector": "#portrait-motion",
+        "axis": "x",
+        "dir": -1,
+        "dur": 0.32,
+        "travel": 10
+      }
+    },
+    {
+      "id": "portrait-to-order",
+      "cut": 12,
+      "technique": "cut-the-curve LEFT",
+      "exit": {
+        "selector": "#portrait-motion",
+        "axis": "x",
+        "dir": -1,
+        "dur": 0.32
+      },
+      "entry": {
+        "selector": "#order-motion",
+        "axis": "x",
+        "dir": -1,
+        "dur": 0.32,
+        "travel": 10
+      }
+    },
+    {
+      "id": "order-to-design",
+      "cut": 18,
+      "technique": "cut-the-curve LEFT",
+      "exit": {
+        "selector": "#order-motion",
+        "axis": "x",
+        "dir": -1,
+        "dur": 0.32
+      },
+      "entry": {
+        "selector": "#design-motion",
+        "axis": "x",
+        "dir": -1,
+        "dur": 0.32,
+        "travel": 10
+      }
+    },
+    {
+      "id": "design-to-contact",
+      "cut": 24,
+      "technique": "cut-the-curve LEFT",
+      "exit": {
+        "selector": "#design-motion",
+        "axis": "x",
+        "dir": -1,
+        "dur": 0.32
+      },
+      "entry": {
+        "selector": "#contact-motion",
+        "axis": "x",
+        "dir": -1,
+        "dur": 0.32,
+        "travel": 10
+      }
+    }
+  ]
+}

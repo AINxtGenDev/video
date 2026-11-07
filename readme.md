@@ -2,7 +2,7 @@
 
 **✨ From creative brief to reviewed brand video.**
 
-[![Status: First Draft](https://img.shields.io/badge/Status-First_Draft-10B981?style=for-the-badge)](#-project-status)
+[![Status: Two Introductions](https://img.shields.io/badge/Status-Two_Introductions-10B981?style=for-the-badge)](#-project-status)
 [![Focus: AI Video](https://img.shields.io/badge/Focus-AI_Video-8B5CF6?style=for-the-badge)](#-intended-workflow)
 [![Notes: Session Log](https://img.shields.io/badge/Notes-Session_Log-0D9488?style=for-the-badge)](session.md)
 [![GitHub: Public Repository](https://img.shields.io/badge/GitHub-Public_Repository-2563EB?style=for-the-badge&logo=github&logoColor=white)](https://github.com/AINxtGenDev/video)
@@ -15,15 +15,18 @@ AI-assisted video production project for short brand and process videos, initial
 
 ## 🧭 Project status
 
-The first Wan 3.0 draft was generated through OpenRouter on **7 November 2026** and finished locally to match the existing brand film: warm cream, sage green, blush, and restrained interior motion.
+Two introduction films were completed on **7 November 2026**, using the live website's actual portrait of Claudia, original logo, German text, and soft background music. Both follow the established cream, sage, and blush palette.
 
-- 🎞️ **Local file:** `plessl-wan-5s-480p-silent.mp4` in the project root.
-- 📐 **Output:** 5.000 seconds · 480×854 portrait · 30 fps · H.264.
-- 🔇 **Audio:** no audio stream.
-- 💵 **Reported generation cost:** USD 0.2125 for one job.
-- 📝 **Details:** [Generation notes and verification](session.md#first-wan-clip-generated--7-november-2026).
+| Film | Local file in the project root | Content |
+| --- | --- | --- |
+| 🌿 Editorial introduction | `plessl-introduction-480p.mp4` | Website imagery, Claudia's portrait, German titles, and music |
+| ✨ Wan introduction | `plessl-introduction-wan-480p.mp4` | New `alibaba/wan-3.0` footage, Claudia's actual portrait, titles, and music |
 
-The MP4 and job metadata are retained locally and excluded from this public repository. The repository contains planning and research documentation; a reusable client and automated production pipeline remain future work.
+📐 **Both outputs:** 30.000 seconds · 480×854 portrait · 30 fps · H.264 · AAC stereo. Claudia is visible from 5–12 seconds. [Editable source and rendering instructions](introduction-video/README.md).
+
+The earlier silent test remains available locally as `plessl-wan-5s-480p-silent.mp4` (five seconds). The new 20-second Wan source generation reported USD 0.85; the earlier test reported USD 0.2125. [Session notes and verification](session.md).
+
+Videos, music, raw generation responses, and job metadata are retained locally and excluded from this public repository. The editable introduction compositions, public website images, font licenses, and documentation are versioned. A reusable OpenRouter client remains future work.
 
 [session.md](session.md) records the research session dated 4 November 2026 and subsequent project updates, including repository setup on 7 November 2026.
 

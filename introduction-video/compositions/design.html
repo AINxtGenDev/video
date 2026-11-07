@@ -1,0 +1,38 @@
+<!doctype html><html lang="de"><body><template>
+<style>
+@font-face{font-family:Manrope;src:url("assets/fonts/Manrope-var.woff2") format("woff2");font-weight:200 800;font-style:normal;font-display:block}
+@font-face{font-family:Montserrat;src:url("assets/fonts/Montserrat-400.woff2") format("woff2");font-weight:400;font-style:normal;font-display:block}
+*{box-sizing:border-box;margin:0;padding:0}
+#root{position:absolute;inset:0;overflow:hidden;font-family:Manrope,sans-serif;color:#2E3134}
+.scene-content{position:absolute;inset:0;background:#F3EEE8}
+.photo-box{position:absolute;overflow:hidden;background:#EFF4EE}
+.photo-pan{position:absolute;inset:0}
+.media{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.title{position:absolute;left:34px;width:412px;font-size:40px;font-weight:700;line-height:1.14;letter-spacing:-1.3px}
+.accent{color:#5E6F5B}
+.rule{position:absolute;left:34px;height:1px;width:412px;background:#9CAF95;transform-origin:left center}
+.small{font-size:18px;line-height:1.45;font-weight:400}
+.label{font-family:Montserrat,sans-serif;font-size:16px;line-height:1.4;font-weight:400}
+
+</style>
+<div id="root" data-composition-id="design" data-width="480" data-height="854" data-duration="6">
+ <div id="design-motion" class="scene-content"><div class="photo-box" style="left:34px;top:80px;width:412px;height:412px" data-layout-allow-overflow data-layout-allow-overlap>
+      <div id="design-pan" class="photo-pan">
+        <img id="design-image" class="clip media editorial-media" data-start="0" data-duration="6" data-track-index="2" src="assets/living.webp" alt="Innenraummotiv der Website" />
+        <video id="design-wan" class="clip media wan-media" data-start="0" data-duration="6" data-track-index="3" data-media-start="11" muted playsinline preload="auto" src="assets/wan-room.mp4"></video>
+      </div>
+    </div>
+    <h2 class="title" style="top:532px"><span>Räume mit</span><br><span id="design-second" class="accent">Persönlichkeit</span></h2>
+    <div id="design-rule" class="rule" style="top:656px"></div>
+    <p id="design-note" class="small" style="position:absolute;left:34px;top:682px">Passend zu Ihnen und Ihrem Alltag.</p></div>
+</div>
+<script>
+{ const tl=gsap.timeline({paused:true});
+tl.fromTo("#design-pan",{scale:1,x:4},{scale:1.05,x:-4,duration:5.8,ease:"none"},0);
+tl.fromTo("#design-second",{opacity:0},{opacity:1,duration:0.55,ease:"power2.out"},1.5);
+tl.fromTo("#design-rule",{scaleX:0},{scaleX:1,duration:0.65,ease:"power2.out"},2.9);
+tl.fromTo("#design-note",{opacity:0},{opacity:1,duration:0.55,ease:"power2.out"},3.5);
+window.__timelines=window.__timelines||{};
+window.__timelines["design"]=tl;
+}
+</script></template></body></html>

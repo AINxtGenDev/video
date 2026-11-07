@@ -20,6 +20,12 @@ __pycache__/
 outputs/
 renders/
 /plessl-wan-5s-480p-silent.mp4
+/plessl-introduction-480p.mp4
+/plessl-introduction-wan-480p.mp4
+introduction-video/assets/music-soft.wav
+introduction-video/assets/wan-room.mp4
+.hyperframes/
+.media/
 *.log
 
 # Operating system metadata

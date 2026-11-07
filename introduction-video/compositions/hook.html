@@ -1,0 +1,38 @@
+<!doctype html><html lang="de"><body><template>
+<style>
+@font-face{font-family:Manrope;src:url("assets/fonts/Manrope-var.woff2") format("woff2");font-weight:200 800;font-style:normal;font-display:block}
+@font-face{font-family:Montserrat;src:url("assets/fonts/Montserrat-400.woff2") format("woff2");font-weight:400;font-style:normal;font-display:block}
+*{box-sizing:border-box;margin:0;padding:0}
+#root{position:absolute;inset:0;overflow:hidden;font-family:Manrope,sans-serif;color:#2E3134}
+.scene-content{position:absolute;inset:0;background:#F3EEE8}
+.photo-box{position:absolute;overflow:hidden;background:#EFF4EE}
+.photo-pan{position:absolute;inset:0}
+.media{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.title{position:absolute;left:34px;width:412px;font-size:40px;font-weight:700;line-height:1.14;letter-spacing:-1.3px}
+.accent{color:#5E6F5B}
+.rule{position:absolute;left:34px;height:1px;width:412px;background:#9CAF95;transform-origin:left center}
+.small{font-size:18px;line-height:1.45;font-weight:400}
+.label{font-family:Montserrat,sans-serif;font-size:16px;line-height:1.4;font-weight:400}
+
+</style>
+<div id="root" data-composition-id="hook" data-width="480" data-height="854" data-duration="5">
+ <div id="hook-motion" class="scene-content"><div class="photo-box" style="left:0;top:0;width:480px;height:484px" data-layout-allow-overflow data-layout-allow-overlap>
+      <div id="hook-pan" class="photo-pan">
+        <img id="hook-image" class="clip media editorial-media" data-start="0" data-duration="5" data-track-index="2" src="assets/living.webp" alt="Innenraummotiv der Website" />
+        <video id="hook-wan" class="clip media wan-media" data-start="0" data-duration="5" data-track-index="3" data-media-start="0" muted playsinline preload="auto" src="assets/wan-room.mp4"></video>
+      </div>
+    </div>
+    <h1 class="title" style="top:520px"><span id="hook-first">Schöne Räume.</span><br><span id="hook-second" class="accent">Klarer Alltag.</span></h1>
+    <div id="hook-rule" class="rule" style="top:650px"></div>
+    <p id="hook-note" class="small" style="position:absolute;left:34px;top:678px">Raumgestaltung &amp; Ordnungscoaching</p></div>
+</div>
+<script>
+{ const tl=gsap.timeline({paused:true});
+tl.fromTo("#hook-pan",{scale:1,x:0},{scale:1.045,x:-5,duration:4.85,ease:"none"},0);
+tl.fromTo("#hook-second",{opacity:0},{opacity:1,duration:0.55,ease:"power2.out"},1.6);
+tl.fromTo("#hook-rule",{scaleX:0},{scaleX:1,duration:0.7,ease:"power2.out"},2.7);
+tl.fromTo("#hook-note",{opacity:0},{opacity:1,duration:0.5,ease:"power2.out"},3.15);
+window.__timelines=window.__timelines||{};
+window.__timelines["hook"]=tl;
+}
+</script></template></body></html>

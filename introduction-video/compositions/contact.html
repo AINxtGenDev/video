@@ -1,0 +1,40 @@
+<!doctype html><html lang="de"><body><template>
+<style>
+@font-face{font-family:Manrope;src:url("assets/fonts/Manrope-var.woff2") format("woff2");font-weight:200 800;font-style:normal;font-display:block}
+@font-face{font-family:Montserrat;src:url("assets/fonts/Montserrat-400.woff2") format("woff2");font-weight:400;font-style:normal;font-display:block}
+*{box-sizing:border-box;margin:0;padding:0}
+#root{position:absolute;inset:0;overflow:hidden;font-family:Manrope,sans-serif;color:#2E3134}
+.scene-content{position:absolute;inset:0;background:#F3EEE8}
+.photo-box{position:absolute;overflow:hidden;background:#EFF4EE}
+.photo-pan{position:absolute;inset:0}
+.media{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.title{position:absolute;left:34px;width:412px;font-size:40px;font-weight:700;line-height:1.14;letter-spacing:-1.3px}
+.accent{color:#5E6F5B}
+.rule{position:absolute;left:34px;height:1px;width:412px;background:#9CAF95;transform-origin:left center}
+.small{font-size:18px;line-height:1.45;font-weight:400}
+.label{font-family:Montserrat,sans-serif;font-size:16px;line-height:1.4;font-weight:400}
+
+</style>
+<div id="root" data-composition-id="contact" data-width="480" data-height="854" data-duration="6">
+ <div id="contact-motion" class="scene-content">
+    <p id="contact-label" class="label" style="position:absolute;left:34px;top:96px;color:#5E6F5B">SCHÖN, WENN WIR UNS KENNENLERNEN.</p>
+    <div style="position:absolute;left:85px;top:177px;width:310px;height:167px" data-layout-allow-overflow>
+      <img id="contact-logo" class="clip" data-start="0" data-duration="6" data-track-index="2" src="assets/logo.webp" alt="Claudia Plessl — Original-Logo" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain" />
+    </div>
+    <div id="contact-rule" class="rule" style="top:394px"></div>
+    <h2 id="contact-cta" class="title" style="top:430px;font-size:35px">Reden wir über<br><span class="accent">Ihren Raum.</span></h2>
+    <p id="contact-domain" style="position:absolute;left:34px;top:566px;font-size:28px;font-weight:700;color:#5E6F5B">claudiaplessl.at</p>
+    <p id="contact-invite" class="small" style="position:absolute;left:34px;top:623px">Kostenloses Erstgespräch</p>
+    <p id="contact-disclosure" class="label" style="position:absolute;left:34px;top:722px;font-size:13px;color:#575A5D">Innenraumbilder: KI-generiert</p></div>
+</div>
+<script>
+{ const tl=gsap.timeline({paused:true});
+tl.fromTo("#contact-rule",{scaleX:0},{scaleX:1,duration:0.65,ease:"power2.out"},0.45);
+tl.fromTo("#contact-cta",{opacity:0},{opacity:1,duration:0.5,ease:"power2.out"},1.05);
+tl.fromTo("#contact-domain",{opacity:0},{opacity:1,duration:0.5,ease:"power2.out"},2.0);
+tl.fromTo("#contact-invite",{opacity:0},{opacity:1,duration:0.45,ease:"power2.out"},2.7);
+tl.fromTo("#contact-disclosure",{opacity:0},{opacity:1,duration:0.45,ease:"power2.out"},3.4);
+window.__timelines=window.__timelines||{};
+window.__timelines["contact"]=tl;
+}
+</script></template></body></html>
