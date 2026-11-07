@@ -158,3 +158,23 @@ Undo: `npm uninstall -g bailian-cli` and remove the installed skills (Claude not
 - Proposed first generation: five seconds, 480p, 16:9, audio disabled, generic interior prompt. Base generation estimate USD 0.25; USD 0.2125 with the currently advertised 15% discount. These are estimates, not a billing guarantee. [Model pricing](https://openrouter.ai/alibaba/wan-3.0).
 - The current model page reports no EU in-region route, and OpenRouter excludes video generation from ZDR eligibility. Use a generic prompt initially and verify data handling before uploading client assets. [Video retention documentation](https://openrouter.ai/docs/guides/overview/multimodal/video-generation#zero-data-retention).
 - No authentication test, dependency installation, paid generation, or account configuration change was performed. Next: make the OpenRouter credential available, implement and verify the proposed client, then agree on the exact first paid request and budget.
+
+## Session handoff and publication — 7 November 2026
+
+### Completed and published
+
+- README presentation changes were committed and pushed in [`1a5d8d6`](https://github.com/AINxtGenDev/video/commit/1a5d8d689ceaf2c823bfd2b0ac79131140ab2d33).
+- The OpenRouter implementation plan, primary-source research, README references, and planning notes were committed and pushed in [`ba2a099`](https://github.com/AINxtGenDev/video/commit/ba2a099c8a8d10f5fe8c053be79cff1899e81872).
+- Before that planning commit, the example JSON was parsed and its duration, resolution, and aspect ratio were checked against the live video catalog. Local document links resolved, `.env` was untracked, the publication files passed a credential-pattern check, and `git diff --cached --check` passed.
+- After that push, the local and remote `main` commits matched and the working tree was clean.
+
+### Active next steps
+
+1. Make the intended OpenRouter credential available under `OPENROUTER_API_KEY` in the ignored local `.env`, or identify its existing variable name. At the last credential-variable inspection, that assignment was absent; credentials have not been re-inspected for this documentation update.
+2. Implement the small local client described in [wan-openrouter-plan.md](wan-openrouter-plan.md), including dry-run, preflight, single submission, resumable polling, protected downloads, and cost reporting.
+3. Verify error handling and credential boundaries with mocked responses before any paid request.
+4. Agree on the exact prompt and spending limit, then submit the proposed five-second 480p test and record the result and reported cost.
+
+The OpenRouter route is the current implementation plan. The earlier direct-Alibaba account and `bailian-cli` instructions remain historical alternatives; they are not prerequisites for this route. No video client has been implemented and no generation has been submitted.
+
+The user reaffirmed that session information should be updated, committed, and pushed automatically after completed work. This is the working preference for future sessions; no background scheduler or Git hook has been installed.
