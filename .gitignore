@@ -1,0 +1,26 @@
+# Local credentials and private keys
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Local assistant configuration
+.claude/
+
+# Dependencies and caches
+node_modules/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.cache/
+
+# Generated media and logs
+outputs/
+renders/
+*.log
+
+# Operating system metadata
+.DS_Store
+Thumbs.db
