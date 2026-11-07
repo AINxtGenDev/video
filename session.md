@@ -248,3 +248,12 @@ The user reaffirmed that session information should be updated, committed, and p
 - Final validation, job records, raw exports, audio measurements, and preview images remain under ignored `outputs/plessl-introduction/`. Music and Wan media inside the editable project are explicitly ignored. All three delivered MP4 files remain local rather than being pushed to the public repository.
 - The editable project was previewed successfully at `http://127.0.0.1:4317/#project/introduction-video`. The video sources and documentation are committed as the normal automatic workflow; no website deployment was performed.
 - Next: user review of both complete films, especially pacing and music, before selecting a version for publication or requesting revisions.
+
+### Delivery handoff and repository publication
+
+- Delivered clickable local links for both 30-second introductions. Reconfirmed that both files exist at the absolute paths above and that their SHA-256 hashes still match the saved final-validation records.
+- Committed and pushed the editable project, verified public website images, font licenses, README, and session notes in [`81559ec`](https://github.com/AINxtGenDev/video/commit/81559ece06b7967239c2f830b3e62ed6d4098b3d), titled `Create two branded introduction videos with portrait and soft music`.
+- Confirmed that local and remote `main` matched after that push. Videos, music, raw job records, and `.env` remain excluded from Git.
+- Stopped the temporary HyperFrames preview server after verification. The earlier localhost preview URL is no longer active; restart it from `introduction-video/` with `npx --yes hyperframes@0.9.20 preview --background --port 4317` when needed.
+- Submitted an anonymized renderer-defect report through the HyperFrames CLI workflow, documenting the missing Wan portrait interval and the successful local composition workaround. No project source, images, absolute paths, or credentials were included in the report.
+- Current objective is complete: both requested introductions are saved locally with Claudia's actual photograph and soft music. Selection for publication, revisions, and website deployment await further user instruction. No additional generation is running.
