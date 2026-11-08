@@ -265,3 +265,15 @@ The user reaffirmed that session information should be updated, committed, and p
 - Preserved `introduction-video/AGENTS.md` unchanged. The repository has no automated unit-test suite or coverage target; the guide accurately documents HyperFrames checks and final-file verification.
 - Checked the guide's length, local document references, staged whitespace, and the nested guide's unchanged status. No video source or delivered media was modified; this was a documentation-only task.
 - User reaffirmed the instruction to update session information, commit, and push when finished. The two delivered introduction videos remain available at the previously recorded local paths.
+
+## OpenRouter video skill installed — 8 November 2026
+
+- User requested installation of the [openrouter-video skill](https://openrouter.ai/skills/openrouter-video) and use of `alibaba/wan-3.0` and `bytedance/seedance-2.5` with their OpenRouter key.
+- The page served a single `SKILL.md` (curl + jq workflow: submit → poll → download). Its content was reviewed before installation; it contains no scripts or installers. It was installed unchanged (byte-identical, `cmp` verified) as `~/.claude/skills/openrouter-video/SKILL.md`, which resolves into the shared `claude-config` repository. That repository change is not yet committed. Claude Code lists the skill as available.
+- Prerequisites: `curl` and `jq` 1.7 are present.
+- Key handling: the single OpenRouter token from the ignored `.env` was copied, without display, into `~/.config/secrets/openrouter.env` (`0600`, directory `0700`) as `OPENROUTER_API_KEY`. Load it with `source ~/.config/secrets/openrouter.env`. Verified with `GET /api/v1/key`: authenticated, not free tier, and a USD 50 limit with about USD 48.45 remaining.
+- Live catalog (`/api/v1/videos/models`) check:
+  - `alibaba/wan-3.0`: 480p/720p/1080p, 2–30 s, five aspect ratios, first/last frame, audio and seed supported. USD 0.05/0.10/0.20 per second.
+  - `bytedance/seedance-2.5`: 480p/720p only, 4–30 s, adds 21:9, first/last frame, audio and seed supported. Billed per video token (USD 0.0000107; 0.0000064 with video input).
+- **Incident:** a masked inspection of `.env` failed to mask its `key: value` lines, so several third-party credentials (OpenRouter, OpenAI, MiniMax, GLM, Hugging Face, AgentMail, Twilio, DuckDNS) appeared in the session transcript. No values are recorded here. Rotation was recommended to the user.
+- No video was generated and no paid request was made.
