@@ -277,3 +277,17 @@ The user reaffirmed that session information should be updated, committed, and p
   - `bytedance/seedance-2.5`: 480p/720p only, 4–30 s, adds 21:9, first/last frame, audio and seed supported. Billed per video token (USD 0.0000107; 0.0000064 with video input).
 - **Incident:** a masked inspection of `.env` failed to mask its `key: value` lines, so several third-party credentials (OpenRouter, OpenAI, MiniMax, GLM, Hugging Face, AgentMail, Twilio, DuckDNS) appeared in the session transcript. No values are recorded here. Rotation was recommended to the user.
 - No video was generated and no paid request was made.
+
+### Test generation with both models — 8 November 2026
+
+- User authorized one 5-second 480p clip per model. Both used the same generic text-to-video request (no client assets): `duration: 5`, `resolution: "480p"`, `aspect_ratio: "16:9"`, `generate_audio: false`. The two jobs ran in parallel, following the skill's submit → poll → download workflow.
+
+| Model | Job ID | Reported cost | Time | Output (`ffprobe`) |
+| --- | --- | ---: | --- | --- |
+| `alibaba/wan-3.0` | `gen-vid-1794138135-dTuVW4ixLoZVis1KtFsS` | USD 0.2125 | ~3 min | 854×480, 30 fps, 5.04 s, H.264, **plus an AAC audio track** |
+| `bytedance/seedance-2.5` | `gen-vid-1794138135-KfDMb8pqbTb465gaBnlg` | USD 0.5183 | ~2 min | 854×480, 24 fps, 5.04 s, H.264, no audio |
+
+- Both files passed a full FFmpeg decode. A mid-clip frame from each was visually checked: plausible interiors, no text or artifacts at that frame.
+- Wan again ignored `generate_audio: false`, and its audio track is not silent (mean −17.6 dB, max −2.9 dB). Strip it locally (`-an`) before use. Unlike the 7 November first-frame job, the resolution and aspect ratio were honored this time.
+- Seedance 2.5 at 480p without audio cost about USD 0.104 per second, roughly twice Wan's USD 0.0425 per second (after its discount).
+- Files are in the ignored `outputs/or-test-wan-5s-480p/` and `outputs/or-test-seedance-5s-480p/` folders (`request.json`, `submit.json`, `job.json`, `video.mp4`, `frame.png`). Total spend: USD 0.73.
