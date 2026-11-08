@@ -309,3 +309,13 @@ The user reaffirmed that session information should be updated, committed, and p
 - Music: the existing brand instrumental excerpt (`introduction-video/assets/music-soft.wav`) with +5 dB, a 1 s fade-in, and a 2.5 s fade-out. It measured −20.5 LUFS integrated. Seedance's native audio was not used because the three segments would have had unrelated audio beds.
 - **Delivered:** `/home/nuc8/05_development/44_video/plessl-seedance-marketing-480p.mp4`. Checked with `ffprobe`: 20.33 s, 854×480, 24 fps, 488 frames, H.264 High, AAC stereo 48 kHz, 3,042,305 bytes. SHA-256 `156214a8dbc6a4c779fb94fe5f7e4b9627d18d01d8e59b3ada93a47fa66ee829`. Full FFmpeg decode passed, and a one-frame-per-second sheet was visually checked. Audio was measured, not auditioned.
 - Working files (requests, job records, segments, overlays, scripts) are in the ignored `outputs/plessl-seedance-marketing/`. Next: user review of pacing, wording, and music.
+
+## Session handoff — 8 November 2026
+
+- Added `/plessl-seedance-marketing-480p.mp4` to `.gitignore` so the delivered film stays local, like the earlier root-level videos.
+- Published in this session: project commits `2164929` (skill/key setup), `47aeacd` (model tests), and `fe697eb` (marketing film), plus `claude-config` commit `1aab12f` (the `openrouter-video` skill). Total OpenRouter spend this session: USD 2.59 (0.73 for tests, 1.86 for the film).
+- Open items:
+  1. **Credential rotation (user):** the third-party keys exposed in the session transcript should be rotated. After a new OpenRouter key is issued, update `~/.config/secrets/openrouter.env`.
+  2. **User review** of `plessl-seedance-marketing-480p.mp4`: pacing, captions, music level, and the garbled magazine print in the first second.
+  3. Other machines need `git pull` in `claude-config` and their own `~/.config/secrets/openrouter.env` to use the skill.
+  4. `claude-config` still has the unrelated untracked `web_searchers_per_session.png`, which was left untouched.
