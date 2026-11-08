@@ -338,3 +338,10 @@ The user reaffirmed that session information should be updated, committed, and p
 
 - User requested removing the „KI-generierte Symbolszenen“ label from `plessl-wan-funny-480p.mp4`. The previous version was backed up to the ignored `outputs/plessl-wan-funny/plessl-wan-funny-480p.with-label.mp4`. The clip was re-rendered from the same Wan source with identical caption, end card, and music, and no new generation (no cost).
 - Checked with `ffprobe`: 12.5 s, 854×480, 30 fps, 375 frames, H.264 + AAC, 2,478,742 bytes. SHA-256 `bd8c2a33f1ebba78d97649526a4105d0e99fe153092f80e162ac8856c13fa806`. Full decode passed, and a frame at 4 s was checked to confirm the label is gone. The Seedance marketing film still carries its label.
+
+### AI seal added to funny clip — 8 November 2026
+
+- User requested placing the user-supplied seal `KI-generiertes Bild – Minimalistisches Siegel.png` (1285×1224 RGBA, sage/blush, "KI-GENERIERT") small in the upper right of `plessl-wan-funny-480p.mp4`.
+- The previous label-free version was backed up as the ignored `outputs/plessl-wan-funny/plessl-wan-funny-480p.no-label.mp4`. The clip was re-rendered from the same Wan source with the seal scaled to 80×76 px at 14 px from the right edge and 12 px from the top. It fades in at 0.5 s and out by 9.2 s, so it does not appear on the end card. No new generation, no cost.
+- Checked with `ffprobe`: 12.5 s, 854×480, 375 frames, H.264 + AAC, 2,493,921 bytes. SHA-256 `f6d22c60b03ee419af35aadd619637c6219c584477e9d2b287cb6145b49edac0`. Full decode passed, and the frame at 4 s plus a zoomed crop were visually checked. "KI-GENERIERT" is legible, but the seal's small subline is not legible at 480p.
+- The seal source PNG in the project root is untracked and was not committed.
