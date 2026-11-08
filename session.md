@@ -319,3 +319,13 @@ The user reaffirmed that session information should be updated, committed, and p
   2. **User review** of `plessl-seedance-marketing-480p.mp4`: pacing, captions, music level, and the garbled magazine print in the first second.
   3. Other machines need `git pull` in `claude-config` and their own `~/.config/secrets/openrouter.env` to use the skill.
   4. `claude-config` still has the unrelated untracked `web_searchers_per_session.png`, which was left untouched.
+
+## Funny Wan 3.0 clip — 8 November 2026
+
+- User requested a funny 480p video using `alibaba/wan-3.0` through the openrouter-video skill, in the style of claudiaplessl.at.
+- Concept, kept gentle and brand-safe: in a calm Viennese period living room (cream sofa, sage/blush cushions, oak herringbone floor, woven basket), striped socks hop out of an overflowing laundry basket, pair up, roll themselves into neat rows in the woven basket. A lone sock waits until its partner appears.
+- Live catalog check confirmed 480p, 16:9, and 2–30 s. Generated one 10 s, 480p, 16:9 text-to-video job (`gen-vid-1794141781-Hc7MK3PcgBmqHtJz83pj`), reported cost **USD 0.425**, with no retakes. Output: 854×480, 30 fps, 10.03 s. Wan again added an audio track despite `generate_audio: false`, and it was discarded.
+- Observed quirk: the laundry basket vanishes midway through the clip. It was accepted as part of the playful motion.
+- Post-production: 0.6 s fade-in from cream, the punchline caption „Jedes Ding hat seinen Platz. Sogar die Socken.“ (6.2–9.2 s), the disclosure „KI-generierte Symbolszenen“, a 1 s dissolve into the existing brand end card (logo, Mag. Claudia Plessl, services/region, claudiaplessl.at, „Kostenloses Erstgespräch vereinbaren“), and the brand instrumental at −19.8 LUFS integrated with fades.
+- **Delivered:** `/home/nuc8/05_development/44_video/plessl-wan-funny-480p.mp4`. Checked with `ffprobe`: 12.5 s, 854×480, 30 fps, 375 frames, H.264 High plus AAC 48 kHz, 2,488,744 bytes. SHA-256 `c14a43d9af2c64199552ee5ae61de20b731c6f1b6d6597b344b73dd398420cc2`. Full decode passed, and a one-frame-per-second sheet was visually checked. Audio was measured, not auditioned.
+- The root MP4 was added to `.gitignore`. Working files are in the ignored `outputs/plessl-wan-funny/`. Session OpenRouter spend is now USD 3.01. Next: user review. Earlier open items (credential rotation, film review) are unchanged.
