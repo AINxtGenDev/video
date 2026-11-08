@@ -2,7 +2,7 @@
 
 **✨ From creative brief to reviewed brand video.**
 
-[![Status: Two Introductions](https://img.shields.io/badge/Status-Two_Introductions-10B981?style=for-the-badge)](#-project-status)
+[![Status: Four Films](https://img.shields.io/badge/Status-Four_Films-10B981?style=for-the-badge)](#-project-status)
 [![Focus: AI Video](https://img.shields.io/badge/Focus-AI_Video-8B5CF6?style=for-the-badge)](#-intended-workflow)
 [![Notes: Session Log](https://img.shields.io/badge/Notes-Session_Log-0D9488?style=for-the-badge)](session.md)
 [![GitHub: Public Repository](https://img.shields.io/badge/GitHub-Public_Repository-2563EB?style=for-the-badge&logo=github&logoColor=white)](https://github.com/AINxtGenDev/video)
@@ -26,7 +26,18 @@ Two introduction films were completed on **7 November 2026**, using the live web
 
 The earlier silent test remains available locally as `plessl-wan-5s-480p-silent.mp4` (five seconds). The new 20-second Wan source generation reported USD 0.85; the earlier test reported USD 0.2125. [Session notes and verification](session.md).
 
-Videos, music, raw generation responses, and job metadata are retained locally and excluded from this public repository. The editable introduction compositions, public website images, font licenses, and documentation are versioned. A reusable OpenRouter client remains future work.
+### 🎞️ Landscape films — 8 November 2026
+
+Generated with the [openrouter-video skill](https://openrouter.ai/skills/openrouter-video) (the OpenRouter video API driven with `curl` and `jq`). German text, the brand closing card with „Kostenloses Erstgespräch vereinbaren“, the label „KI-generierte Symbolszenen“, and the brand instrumental were all added in post-production.
+
+| Film | Local file in the project root | Model | Output | Cost |
+| --- | --- | --- | --- | ---: |
+| 🌸 Marketing film: from clutter to calm | `plessl-seedance-marketing-480p.mp4` | `bytedance/seedance-2.5`, three chained 6 s segments | 20.33 s · 854×480 · 24 fps | USD 1.86 |
+| 🧦 Funny clip: socks tidy themselves | `plessl-wan-funny-480p.mp4` | `alibaba/wan-3.0`, one 10 s generation | 12.5 s · 854×480 · 30 fps | USD 0.43 |
+
+Both were natively generated at 480p in 16:9, H.264 + AAC. The scenes are AI-generated illustrations, not client projects. Wan returns an audio track even with `generate_audio: false`, so it is removed in post-production.
+
+Videos, music, raw generation responses, and job metadata are retained locally and excluded from this public repository. The editable introduction compositions, public website images, font licenses, and documentation are versioned.
 
 [session.md](session.md) records the research session dated 4 November 2026 and subsequent project updates, including repository setup on 7 November 2026.
 
@@ -61,6 +72,8 @@ The key path is specific to that machine. Other contributors should use their ow
 
 ## 🔐 Credentials and generated assets
 
+- 🎬 To generate video, load the OpenRouter key with `source ~/.config/secrets/openrouter.env`, which keeps it outside this repository. The `openrouter-video` skill is installed for Claude Code, and paid generations need explicit approval.
+
 - 🔑 Keep API credentials in local environment files or an appropriate secrets store. Never commit credentials or private keys.
 - 🛡️ `.gitignore` excludes `.env` files, local Claude settings, common dependency/cache directories, and generated files under `outputs/` and `renders/`.
 - 🔍 Review staged changes before every commit, especially because this repository is public.
@@ -68,6 +81,7 @@ The key path is specific to that machine. Other contributors should use their ow
 
 ## 📚 References
 
+- [🎬 OpenRouter video skill](https://openrouter.ai/skills/openrouter-video) · [video generation guide](https://openrouter.ai/docs/guides/overview/multimodal/video-generation).
 - [🎬 Wan 3.0 through OpenRouter — implementation plan](wan-openrouter-plan.md).
 - [🔎 Wan and OpenRouter — verified API research](wan-openrouter-research.md).
 - [Project research and proposed next steps](session.md).

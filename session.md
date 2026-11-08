@@ -329,3 +329,7 @@ The user reaffirmed that session information should be updated, committed, and p
 - Post-production: 0.6 s fade-in from cream, the punchline caption „Jedes Ding hat seinen Platz. Sogar die Socken.“ (6.2–9.2 s), the disclosure „KI-generierte Symbolszenen“, a 1 s dissolve into the existing brand end card (logo, Mag. Claudia Plessl, services/region, claudiaplessl.at, „Kostenloses Erstgespräch vereinbaren“), and the brand instrumental at −19.8 LUFS integrated with fades.
 - **Delivered:** `/home/nuc8/05_development/44_video/plessl-wan-funny-480p.mp4`. Checked with `ffprobe`: 12.5 s, 854×480, 30 fps, 375 frames, H.264 High plus AAC 48 kHz, 2,488,744 bytes. SHA-256 `c14a43d9af2c64199552ee5ae61de20b731c6f1b6d6597b344b73dd398420cc2`. Full decode passed, and a one-frame-per-second sheet was visually checked. Audio was measured, not auditioned.
 - The root MP4 was added to `.gitignore`. Working files are in the ignored `outputs/plessl-wan-funny/`. Session OpenRouter spend is now USD 3.01. Next: user review. Earlier open items (credential rotation, film review) are unchanged.
+
+### README update — 8 November 2026
+
+- Updated [readme.md](readme.md): the status badge now reads "Four Films", plus a landscape-films table (Seedance marketing film and funny Wan clip, with model, output, and cost), a note on the Wan audio quirk and the AI-scene disclosure, how to load the OpenRouter key without the repository, and links to the skill and video guide. Removed the stale "reusable OpenRouter client remains future work" line, since the skill now covers that workflow.
