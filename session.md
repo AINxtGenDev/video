@@ -291,3 +291,21 @@ The user reaffirmed that session information should be updated, committed, and p
 - Wan again ignored `generate_audio: false`, and its audio track is not silent (mean −17.6 dB, max −2.9 dB). Strip it locally (`-an`) before use. Unlike the 7 November first-frame job, the resolution and aspect ratio were honored this time.
 - Seedance 2.5 at 480p without audio cost about USD 0.104 per second, roughly twice Wan's USD 0.0425 per second (after its discount).
 - Files are in the ignored `outputs/or-test-wan-5s-480p/` and `outputs/or-test-seedance-5s-480p/` folders (`request.json`, `submit.json`, `job.json`, `video.mp4`, `frame.png`). Total spend: USD 0.73.
+
+## Seedance 2.5 marketing film — 8 November 2026
+
+- User requested a polished, approximately 20-second, 16:9 marketing film using `bytedance/seedance-2.5` at 480p through the openrouter-video skill. The film was to move from clutter through organisation to a harmonious home, with German messaging, smooth transitions, and soft instrumental music.
+- Re-analysed the live [claudiaplessl.at](https://claudiaplessl.at/) homepage (HTTP 200). It confirms: „Raumgestaltung und Ordnungscoaching aus einer Hand“, „Erst schaffen wir Klarheit, dann gestalten wir den Raum, der zu Ihnen und Ihrem Alltag passt“, Wien und Niederösterreich, and the CTA „Kostenloses Erstgespräch vereinbaren“. Brand tokens came from `introduction-video/SPEC.md` (Creme `#F3EEE8`, Sage `#5E6F5B`, Anthrazit `#2E3134`; Manrope/Montserrat).
+- Live catalog check: Seedance 2.5 supports 480p, 16:9, 4–30 s, `first_frame`, and audio. No substitution was needed.
+- Generated three 6-second, 480p, 16:9 silent segments, chained by using the previous segment's last frame as the next `first_frame` for spatial continuity:
+  1. Cluttered Viennese period living room, slow lateral dolly (`gen-vid-1794139325-AUrjIgLFxQycaxWfZ10O`).
+  2. Continued drift to a calmer corner with folded textiles (`gen-vid-1794139492-FE5ad3OiOQYX2IyjFreM`). The prompted hands did not appear, and the result was kept because the motion was smooth.
+  3. Reveal past a wall column into the styled, harmonious room (`gen-vid-1794139721-ieaIgW7sOJA9v1vgZddT`).
+  - Each segment reported USD 0.6211, for a **total of USD 1.86**. There were no retakes. Every output was natively 854×480 at 24 fps, about 6.04 s, without audio.
+- Post-production (FFmpeg + PIL, brand fonts from the website project):
+  - 0.4 s dissolves at the frame-continuous joins, a 0.8 s fade-in from cream, and a 1 s dissolve into a 4 s end card.
+  - Captions taken from the website's own voice: „Wenn der Raum nicht mehr zum Alltag passt …“, „Erst schaffen wir Klarheit …“, „… dann gestalten wir den Raum, der zu Ihnen passt.“
+  - The end card shows the logo, Mag. Claudia Plessl, Raumgestaltung & Ordnungscoaching · Wien & Niederösterreich, claudiaplessl.at, and the CTA pill. The disclosure „KI-generierte Symbolszenen“ appears during the scenes. No testimonials, qualifications, or project results were added.
+- Music: the existing brand instrumental excerpt (`introduction-video/assets/music-soft.wav`) with +5 dB, a 1 s fade-in, and a 2.5 s fade-out. It measured −20.5 LUFS integrated. Seedance's native audio was not used because the three segments would have had unrelated audio beds.
+- **Delivered:** `/home/nuc8/05_development/44_video/plessl-seedance-marketing-480p.mp4`. Checked with `ffprobe`: 20.33 s, 854×480, 24 fps, 488 frames, H.264 High, AAC stereo 48 kHz, 3,042,305 bytes. SHA-256 `156214a8dbc6a4c779fb94fe5f7e4b9627d18d01d8e59b3ada93a47fa66ee829`. Full FFmpeg decode passed, and a one-frame-per-second sheet was visually checked. Audio was measured, not auditioned.
+- Working files (requests, job records, segments, overlays, scripts) are in the ignored `outputs/plessl-seedance-marketing/`. Next: user review of pacing, wording, and music.
