@@ -333,3 +333,8 @@ The user reaffirmed that session information should be updated, committed, and p
 ### README update — 8 November 2026
 
 - Updated [readme.md](readme.md): the status badge now reads "Four Films", plus a landscape-films table (Seedance marketing film and funny Wan clip, with model, output, and cost), a note on the Wan audio quirk and the AI-scene disclosure, how to load the OpenRouter key without the repository, and links to the skill and video guide. Removed the stale "reusable OpenRouter client remains future work" line, since the skill now covers that workflow.
+
+### Funny clip revision — 8 November 2026
+
+- User requested removing the „KI-generierte Symbolszenen“ label from `plessl-wan-funny-480p.mp4`. The previous version was backed up to the ignored `outputs/plessl-wan-funny/plessl-wan-funny-480p.with-label.mp4`. The clip was re-rendered from the same Wan source with identical caption, end card, and music, and no new generation (no cost).
+- Checked with `ffprobe`: 12.5 s, 854×480, 30 fps, 375 frames, H.264 + AAC, 2,478,742 bytes. SHA-256 `bd8c2a33f1ebba78d97649526a4105d0e99fe153092f80e162ac8856c13fa806`. Full decode passed, and a frame at 4 s was checked to confirm the label is gone. The Seedance marketing film still carries its label.
